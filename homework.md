@@ -104,7 +104,7 @@ db.users.find({
  }
 }).sort({
  registered: 1
-}).toArray()[0];
+}).limit(1);
 // response
 {
  "_id": ObjectId("5adf3c1544abaca147cdd568"),
