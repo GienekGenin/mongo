@@ -19,10 +19,7 @@ let cursor = db.users.aggregate([{
  "_id": null,
  "totalAvgAge": 30.38862559241706
 }
-let avg;
-cursor.forEach(function(element) {
- avg = element.totalAvgAge;
-});
+let avg = cursor[0].totalAvgAge;
 ```
 3. Найти средний возраст в штате Аляска
 ```javascript
@@ -46,10 +43,7 @@ cursor = db.users.aggregate([{
  "_id": null,
  "avgAgeInAlaska": 31.5
 }
-let avg_alaska;
-cursor.forEach(function(element) {
- avg_alaska = element.avgAgeInAlaska;
-});
+let avg_alaska = cursor[0].avgAgeInAlaska;
 ```
 4. Начиная от Math.ceil(avg + avg_alaska) найти первого человека с другом по имени Деннис
 ```javascript
